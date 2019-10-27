@@ -1,3 +1,9 @@
+//--Function List--
+//Display
+//REcursiveDisplay
+//Create
+
+
 #include<iostream>
 using namespace std;
 //function to create a node
@@ -10,7 +16,7 @@ struct Node{
 Node *first = NULL; 
 
 //function to create linked-list from the array
-void create(int A[] , int n){
+void Create(int A[] , int n){
 	int i;
 //now we will scan through the array and take one element at a time and create linked-list
 //*t is a temporary pointer and will help to create list
@@ -41,10 +47,17 @@ void Display(struct Node *p){
 	}
 }
 
+void RecursiveDisplay(Node *p){
+	if(p!=NULL){
+		cout << p->data << "->";
+		RecursiveDisplay(p->next);
+	}
+}
+
 int main(){
 	struct Node *temp;
 	int A[] = {9,5,7,12,15,16};
-	create(A,6);
+	Create(A,6);
 	Display(first);
 	return 0;
 }
