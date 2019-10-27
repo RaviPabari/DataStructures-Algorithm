@@ -4,49 +4,41 @@
 //3)Length(Node *First)
 //4)SumOfAllElements(Node *First)
 //5)MaxAndMin(Node *First)
-
+//6)Search(Node *first, iny key)
 
 #include<iostream>
 using namespace std;
-//function to create a node
-//A node contains 2 things, DATA and pointer to next node
-struct Node{
-	int data;
-	Node *next;
+
+class Node{
+	public:
+		int data;
+		Node *next;
 };
-//creating a global variable of type Node and setting it to NULL
-Node *first = NULL; 
+Node *first=NULL;
 
-//function to create linked-list from the array
-void Create(int A[] , int n){
-	int i;
-//now we will scan through the array and take one element at a time and create linked-list
-//*t is a temporary pointer and will help to create list
-//*last pointer will help to create new node at the end of the list
-
-	struct Node *t, *last;
-//as the linked-list is empty we will create our first node
-// and assign it to the first element in the array
+void create(int A[],int n){
 	first = new Node;
 	first -> data = A[0];
-	first -> next = NULL; //because this is the first node and there is nothing beyond that
+	first -> next = NULL;
+	Node *last,*temp;
+	int i;
 	last = first;
-//also we will make last pointing to the first node
-//now rest of the nodes we will create with the help of LOOP
+	
 	for(i=1;i<n;i++){
-		t = new Node;
-		t->data = A[i];
-		t->next = NULL;
-		last->next = t;
-		last = t;
-	}			
+		temp = new Node;
+		temp -> data = A[i];
+		temp->next = NULL;
+		last->next = temp;
+		last = temp;
+	}
 }
 
-void Display(struct Node *p){
+void Display(Node *p){
 	while(p!=NULL){
-		cout << p->data << endl;
-		p = p-> next;
+		cout << p->data << "->" ;
+		p = p->next;
 	}
+	cout << "NULL" << endl;
 }
 
 void RecursiveDisplay(Node *p){
@@ -54,7 +46,11 @@ void RecursiveDisplay(Node *p){
 		cout << p->data << "->";
 		RecursiveDisplay(p->next);
 	}
+	cout << "NULL" << endl;
 }
+
+//length or number of nodes in a LL;
+void Length(Node *p){ 
 	int count=0;
 	while(p!=NULL){
 		count++;
@@ -89,6 +85,19 @@ void MaxAndMin(Node *p){
 	cout << "Max = " << max << " Min = " << min << endl;	
 }
 
+void Search(Node *p,int key){
+	int count=0;
+	while(p!=NULL){
+		count ++;
+		if(p->data == key){
+			cout <<"Element " << key <<" found at position no. " << count << endl;  
+			break;
+		}
+		p=p->next;
+	}
+}
+
+
 int main(){
 	int A[]={1,2,3,4,5,6,344,8,9};
 	int n=sizeof(A)/sizeof(A[0]);
@@ -97,5 +106,6 @@ int main(){
 	Length(first);
 	SumOfAllElements(first);
 	MaxAndMin(first);
+	Search(first,344);
 	return 0;
 }
