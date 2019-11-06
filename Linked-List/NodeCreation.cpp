@@ -32,6 +32,5 @@ int main(){
 	third -> next = NULL;
 	
 	Display(first);
-	
 	return 0;
 }
