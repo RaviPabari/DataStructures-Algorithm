@@ -18,7 +18,7 @@ def maximizeProfit(pr,wt,N,W):
         if wt[ind]+Wc<=W:
             Wc += wt[ind]     
             finalLi.append(pr[ind])
-            pW.pop()
+            pW.remove(x)
     finalLi.sort(reverse = True)
     sum=0
     print(finalLi)
