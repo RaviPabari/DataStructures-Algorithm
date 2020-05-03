@@ -36,6 +36,18 @@ class Node:
             else:
                 self.right = Node(data)
                 return True
+            
+    def height(self):
+        lt = -1
+        rt = -1
+        if self.left:
+            lt = self.left.height()
+        if self.right:
+            rt = self.right.height()
+        if lt>rt:
+            return lt+1
+        else:
+            return rt+1
     
     def find(self,data):
         '''
@@ -102,6 +114,13 @@ class Tree:
             return self.root.find(data)
         else:
             return False
+        
+    def height(self):
+        if not self.root:
+            print("height of the tree is 0")
+        else:    
+            ht = self.root.height()
+            print("height of the tree is",str(ht))
     
     def preorder(self):
         print("Preorder Traversal")
