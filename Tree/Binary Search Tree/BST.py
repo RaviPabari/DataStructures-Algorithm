@@ -8,7 +8,6 @@ Created on Mon May  4 15:48:09 2020
 This is an augmented Binary Search Tree with Height Augmentation, and has track of parent nodes
 Every node has its height/depth and it's parent node info with it so computing height when needed
 becomes O(1) which will be helpful for building Balanced Binary Tree (AVL Tree)
-After creating Tree use Tree.help() to see functions you can use on this tree :)
 """
 def height(node):
     if node is None:
@@ -139,7 +138,8 @@ class Node:
         return current
     
     def next_smaller(self):
-         """Returns the node with the next larger key (the successor) in the BST.
+        """
+         Returns the node with the next larger key (the successor) in the BST.
         """
         #case 1 if left sub tree exists
         if self.left:
@@ -151,7 +151,7 @@ class Node:
         return current
     
     def next_larger(self):
-         """Returns the node with the next smaller key (the predecessor) in the BST.
+        """Returns the node with the next smaller key (the predecessor) in the BST.
         """
         #case 1 if right subtree exists
         if self.right:
@@ -188,7 +188,7 @@ class Node:
         return None
     
     def delete(self):
-         """Deletes and returns this node from the BST."""
+       """Deletes and returns this node from the BST."""
        if self.left is None or self.right is None:
            if self is self.parent.left:
                self.parent.left = self.left or self.right
@@ -204,7 +204,7 @@ class Node:
            return s.delete()
                   
 class BST(object):
-     """A binary search tree."""
+    """A binary search tree."""
      
     def __init__(self):
         """Creates an empty BST."""
