@@ -36,7 +36,7 @@ class Node:
         
         Args:
             node: The node to be inserted.
-      """
+        """
         if node is None:
             return
         if node.value == self.value:
@@ -229,11 +229,11 @@ class BST(object):
         print("Inorder Traversal")
         self.root.inorder()
     
-    def inorder(self):
+    def preorder(self):
         print("Preorder Traversal")
         self.root.preorder()
     
-    def inorder(self):
+    def postorder(self):
         print("Postorder Traversal")
         self.root.postorder()
     
@@ -337,7 +337,7 @@ class BST(object):
 #bst.insert(480)
 #for i in range(len(arr)):
 #    bst.insert(arr[i])
-#bst.inorder()
+#bst.preorder()
 #bst.delete(439)
 #print(bst)
 #bst.help()
