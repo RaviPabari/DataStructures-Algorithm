@@ -6,7 +6,9 @@
 Ravi Pabari
 <br>
 aka Dragon Warrior
-
+<br>
+<br>
+`Fell free to contribute in other languages too`
 
 # Arrays
 # Stack
