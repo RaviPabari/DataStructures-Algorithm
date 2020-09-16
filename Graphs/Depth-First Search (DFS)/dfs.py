@@ -49,12 +49,25 @@ class Graph:
                     q.append(edg)
         # print("exploring order",self.order)
     
-    def DFS(self,start):
+    def DFS_recursive(self,start):
         self.explored.add(start)
         self.order.append(start)
         for edg in self.graph_dict[start]:
             if edg not in self.explored:
                 self.DFS(edg)
+    def DFS_iterative(self,start):
+        stack=[]
+        self.explored.add(start)
+        self.order.append(start)
+        stack.append(start)
+        while len(stack)!=0:
+            v = stack.pop()
+            for edg in self.graph_dict[v]:
+                if edg not in self.explored:
+                    self.explored.add(edg)
+                    self.order.append(edg)
+                    stack.append(edg)
+        print("exploring order BFS :",self.order)
         
     def print(self):
         print('exploring order',self.order)
@@ -93,12 +106,13 @@ if __name__ == '__main__':
     ]
     start = time.time()
     graph = Graph(routes)
-    print("DFS :")
-    graph.DFS("Mumbai")
-    graph.print()
-    print("---")
-    print("BFS :")
-    graph2 = Graph(routes)
-    graph2.BFS("Mumbai")
-    graph2.print()
+    # print("DFS :")
+    # graph.DFS("Mumbai")
+    # graph.print()
+    # print("---")
+    # print("BFS :")
+    # graph2 = Graph(routes)
+    # graph2.BFS("Mumbai")
+    # graph2.print()
+    graph.DFS_iterative("Mumbai")
     print("Time =",time.time()-start)
