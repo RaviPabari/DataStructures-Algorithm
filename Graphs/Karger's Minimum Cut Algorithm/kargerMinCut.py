@@ -6,7 +6,7 @@ Created on Sun Sep  6 11:45:18 2020
 @author: ravi
 """
 import random
-
+import time
 #loads the data into dictionary in the form of adjacency list
 def load_graph():
     f = open('minCutdata.txt','r')
@@ -61,6 +61,7 @@ def min_cut(graph):
 min_list=[]   
 #as this algorithm is fast but sometime fails to return the min cut
 #so run this for couple of times and return the minimum cut
+start = time.time()
 for i in range(50):
     #loads the data into graph(dictionary)
     graph = load_graph()
@@ -68,3 +69,4 @@ for i in range(50):
     min_list.append(cut)
 print('--After 50 iterations--')
 print("min cut =",min(min_list))
+print("time =",time.time()- start)
