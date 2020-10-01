@@ -1,6 +1,6 @@
 # Data Structures And Algorithm Using Python3 
 
-`This is my repository for Data Structures And Algorithm using Python3. This repository mainly aims at implementation of various Data Structures and Algorithm techniques.`
+`This is my repository for Data Structures And Algorithms using Python3. This repository mainly aims at implementation of various Data Structures and Algorithm techniques.`
 <br>
 <br>
 Ravi Pabari
@@ -8,7 +8,7 @@ Ravi Pabari
 aka Dragon Warrior
 <br>
 <br>
-`Fell free to contribute in other languages too`
+`Feel free to contribute in other languages too`
 
 # Arrays
 # Stack
