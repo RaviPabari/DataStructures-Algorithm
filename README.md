@@ -8,13 +8,14 @@ Ravi Pabari
 aka Dragon Warrior
 <br>
 <br>
-`Fell free to contribute in other languages too`
+`Fell free to contribute in other languages too`<br><br>
 
 # Arrays
 # Stack
 # Queue
 # Linked List
 # Sorting
+# Searching
 # Heap
 # BackTracking
 # Divide And Conquer
