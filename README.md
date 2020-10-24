@@ -8,7 +8,7 @@ Ravi Pabari
 aka Dragon Warrior
 <br>
 <br>
-`Fell free to contribute in other languages too`
+`Feel free to contribute in other languages too`
 
 # Arrays
 # Stack
